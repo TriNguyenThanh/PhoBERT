@@ -49,17 +49,20 @@ print(f"Đã thiết lập thư mục lưu trữ: {PROJECT_DIR}")
 Bộ dữ liệu ViHSD có thể được tải trực tiếp từ kho lưu trữ chính thức của tác giả:
 
 ```python
+import io
+import urllib.request
+import zipfile
 import pandas as pd
-import requests
 
-# URL dữ liệu gốc từ repository tác giả Luu et al. (2021)
-TRAIN_URL = "https://raw.githubusercontent.com/sonlam1102/vihsd/main/data/train.csv"
-DEV_URL   = "https://raw.githubusercontent.com/sonlam1102/vihsd/main/data/dev.csv"
-TEST_URL  = "https://raw.githubusercontent.com/sonlam1102/vihsd/main/data/test.csv"
+# URL dữ liệu gốc dạng tệp zip từ repository tác giả Luu et al. (2021)
+ZIP_URL = "https://raw.githubusercontent.com/sonlam1102/vihsd/main/data/vihsd.zip"
 
-train_df = pd.read_csv(TRAIN_URL)
-dev_df   = pd.read_csv(DEV_URL)
-test_df  = pd.read_csv(TEST_URL)
+req = urllib.request.Request(ZIP_URL, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as resp:
+    with zipfile.ZipFile(io.BytesIO(resp.read())) as z:
+        train_df = pd.read_csv(z.open('vihsd/train.csv'))
+        dev_df   = pd.read_csv(z.open('vihsd/dev.csv'))
+        test_df  = pd.read_csv(z.open('vihsd/test.csv'))
 
 # Kiểm tra và đồng bộ tên cột chuẩn: id, text, label_id
 def standardize_df(df):

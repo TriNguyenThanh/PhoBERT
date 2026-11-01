@@ -55,7 +55,7 @@ ViHSD (Raw 33.4k) ──► Stratified Split (72:8:20) ──► Preprocessing &
 ### Environment Dependencies
 Install required packages for local development or Colab:
 ```bash
-pip install -q transformers==4.38.2 accelerate==0.28.0 datasets==2.18.0 scikit-learn pyvi seaborn matplotlib emoji
+pip install -q pyvi emoji "transformers>=4.38.0" "accelerate>=0.33.0"
 ```
 
 ### Inspecting & Validating Pipeline Diagrams and Documentation
@@ -85,7 +85,7 @@ print(confusion_matrix(df['ground_truth'], df['predicted_label'], labels=['CLEAN
   - `NLP.md`: Formal technical specification and experiment protocol.
   - `pipeline.md`: In-depth narrative breakdown of each step, parameters, and rationale.
   - `pipeline_diagram.html`: Monochrome linear 6-step architecture diagram in standalone HTML/SVG.
-  - `PhoBERT_ViHSD_ClassWeight_Colab.ipynb`: End-to-end training and evaluation notebook for Colab.
+  - `ViHSD_monolingual_Transformers.ipynb`: End-to-end training and evaluation notebook for Colab (modified from original author Luu et al. 2021).
 - `docs/`:
   - `01_tong_quan_de_tai.md` to `05_mau_bao_cao_so_sanh.md`: Technical documentation series.
   - `docs/papers/`: Analyses of literature baselines (Luu 2021, Tran 2022, Luu 2024, Hoang 2023).
