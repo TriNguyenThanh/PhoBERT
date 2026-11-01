@@ -224,7 +224,6 @@ __marimo__/
 
 # Local research & documentation files (kept on local machine, excluded from git repo)
 search/
-docs/
 original_paper_notebooks/
 paper/
-pipeline/
+outputs/
