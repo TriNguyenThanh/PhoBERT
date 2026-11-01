@@ -81,16 +81,13 @@ print(confusion_matrix(df['ground_truth'], df['predicted_label'], labels=['CLEAN
 
 ## Repository Structure
 
-- `pipeline/`:
-  - `NLP.md`: Formal technical specification and experiment protocol.
-  - `pipeline.md`: In-depth narrative breakdown of each step, parameters, and rationale.
-  - `pipeline_diagram.html`: Monochrome linear 6-step architecture diagram in standalone HTML/SVG.
-  - `ViHSD_monolingual_Transformers.ipynb`: End-to-end training and evaluation notebook for Colab (modified from original author Luu et al. 2021).
+- `PhoBERT_ViHSD_ClassWeight.ipynb`: End-to-end training and evaluation notebook for Colab with teencode normalization (414 words) and Class Weighting.
+- `original_paper_notebooks/`: Original baseline notebooks from Luu et al. (2021).
+- `data/`: ViHSD dataset (train.csv, dev.csv, test.csv) and teencode dictionaries.
 - `docs/`:
   - `01_tong_quan_de_tai.md` to `05_mau_bao_cao_so_sanh.md`: Technical documentation series.
   - `docs/papers/`: Analyses of literature baselines (Luu 2021, Tran 2022, Luu 2024, Hoang 2023).
 - `paper/`: Original academic PDF papers.
-- `search/`: Literature deep research notes.
 
 ## Deliverables Checklist
 - `predictions.csv`: Model B (Class Weight) predictions on 6,680 Test samples (`id, text, ground_truth, predicted_label`).
