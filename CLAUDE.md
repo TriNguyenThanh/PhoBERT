@@ -89,7 +89,7 @@ print(confusion_matrix(df['ground_truth'], df['predicted_label'], labels=['CLEAN
 - `PhoBERT_ViHSD_ClassWeight.ipynb`: End-to-end training and evaluation notebook with teencode normalization (414 words), class weighting, and automated Google Drive backup.
 - `original_paper_notebooks/`: Original baseline notebooks from Luu et al. (2021).
 - `data/`: ViHSD dataset (`train.csv`, `dev.csv`, `test.csv`) and teencode dictionaries (`teencode_414.json`, `teencode_35.json`).
-- `outputs/`: Output deliverables grouped by seed (`seed42_teencode_414`, `seed42_teencode_35`, `seed123_teencode_414`).
+- `outputs/`: Output deliverables grouped by seed (`seed42_teencode_414`, `seed42_teencode_35`, `seed123_teencode_414`, `seed456_teencode_414`, `seed789_teencode_414`).
 - `docs/`: Technical documentation series:
   - `01_tong_quan_de_tai.md`: Project overview & ViHSD dataset.
   - `02_kien_truc_va_phuong_phap.md`: PhoBERT architecture, word segmentation & class weighting theory.
